@@ -1,7 +1,5 @@
-% Possï¿½veis TODO
-% - linkar as seï¿½ï¿½es de pesq ï¿½ seï¿½ï¿½o histï¿½rica
 \documentclass[a4paper,titlepage]{article}
-\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[portuges]{babel}
 % setspace - \doublespace \onehalfspace
@@ -17,9 +15,9 @@
 \usepackage{xspace}
 \usepackage{array}
 
-\newtheorem{definition}{Definiï¿½ï¿½o}
+\newtheorem{definition}{DefiniÃ¯Â¿Â½Ã¯Â¿Â½o}
 \newtheorem{theorem}{Teorema}
-\newtheorem{notation}{Notaï¿½ï¿½o}
+\newtheorem{notation}{NotaÃ¯Â¿Â½Ã¯Â¿Â½o}
 \floatname{algorithm}{Algoritmo}
 
 \newenvironment{changemargin}[2]{\begin{list}{}{
@@ -172,181 +170,196 @@ breaklines=true
 %  - @@@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
-\section{Contextualização}
+\section{ContextualizaÃ§Ã£o}
 
-O presente plano de pesquisa se refere a atividades propostas para a aluna
-Juliana Ventura, a serem realizadas a nível de doutorado no Instituto
-Politécnico -- IPRJ/UERJ, Departamento de Modelagem Computacional.
+O presente plano de pesquisa se refere a atividades propostas para o aluno
+Cleuber Silva, a serem realizadas a nÃ­vel de doutorado no Instituto
+PolitÃ©cnico -- IPRJ/UERJ, Departamento de Modelagem Computacional.
 Pretende-se trabalhar em conjunto com dois orientadores, os quais seriam prof.\
-Ricardo Fabbri, do laboratório de visualização, e o prof.\ Francisco Duarte
-Moura Neto, do laboratório de tecnologia da informação (LTI), juntando-se os
+Ricardo Fabbri, do laboratÃ³rio de visualizaÃ§Ã£o, e o prof.\ Francisco Duarte
+Moura Neto, do laboratÃ³rio de tecnologia da informaÃ§Ã£o (LTI), juntando-se os
 aspectos ativos recentemente das pesquisas de ambos. Pretende-se trabalhar em
-conjunto com outros grupos de pesquisa além desses dois laboratórios dentro do
-IPRJ, bem como outros pesquisadores no IMPA e em outras instituiçõs em
-colaboração internacional na realização de projetos e publicação de artigos.
-Dentre as instituições internacional envolvidas, tem-se: Brown University,
-University of Liverpool, Notre Dame University, Georgia Tech, Czech Technical
-University, e General Motors Research.
+conjunto com outros grupos de pesquisa alÃ©m desses dois laboratÃ³rios dentro do
+IPRJ, bem como outros pesquisadores no IMPA e em outras instituiÃ§Ãµs em
+colaboraÃ§Ã£o internacional na realizaÃ§Ã£o de projetos e publicaÃ§Ã£o de artigos.
+Dentre as instituiÃ§Ãµes internacionais envolvidas, tem-se: University of
+Minneapolis (com Peter Olver) , Brown University (com Benjamin Kimia) e
+University of Liverpool (com Peter Giblin).
 
-\section{Introdução}
+\section{IntroduÃ§Ã£o}
 
 
-Na presente década está-se presenciando um nível de investimentos sem
-precedentes em ecosistemas de tecnologia para modelagem 3D de fenômenos
-usando-se múltiplas imagens adquiridas por uma câmera em diferentes posições,
-múltiplas câmeras, ou vídeo~\cite{AppleKeynote:2018}. % A Expand here on explicit applications and citations
+Na presente dÃ©cada estÃ¡-se presenciando um nÃ­vel de investimentos sem
+precedentes em ecosistemas de tecnologia para modelagem 3D de fenÃ´menos
+usando-se mÃºltiplas imagens adquiridas por uma cÃ¢mera em diferentes posiÃ§Ãµes,
+mÃºltiplas cÃ¢meras, ou vÃ­deo~\cite{AppleKeynote:2018}. % A Expand here on explicit applications and citations
 % - mention concrete appso ok
 % - mention hot techs that have been developed, then link to next sentence
-Esse impacto cada vez maior da visão computacional 3D se deve em grande parte a
-tecnologias de \emph{structre from motion} (SfM) desenvolvidas na década
+Esse impacto cada vez maior da visÃ£o computacional 3D se deve em grande parte a
+tecnologias de \emph{structre from motion} (SfM) desenvolvidas na dÃ©cada
 passada, a qual possibilitou novas ferramentas para resolver problemas chave de
-forma robusta e automática. No entanto, o vasto potencial das tecnologias 3D
-permanece ainda inexplorado, em parte devido à rentabilidade de aplicações mais
-simples e imediatas, e em parte devido a limitações da tecnologia evidentes
-na medida em que aplicativos práticos são desenvolvidos, como realidade
-aumentada~\cite{AppleKeynote:2018}. Pode-se afirmar que tais limitações se devem
-em três problemas centrais: o uso de geometria projetiva clássica de pontos, sem 
-a geometria diferencial necessária para modelar estruturas mais gerais; o uso
-sub-ótimo de múltiplas imagens; e a necessidade de models 3D mais
+forma robusta e automÃ¡tica. No entanto, o vasto potencial das tecnologias 3D
+permanece ainda inexplorado, em parte devido Ã  rentabilidade de aplicaÃ§Ãµes mais
+simples e imediatas, e em parte devido a limitaÃ§Ãµes da tecnologia evidentes
+na medida em que aplicativos prÃ¡ticos sÃ£o desenvolvidos, como realidade
+aumentada~\cite{AppleKeynote:2018}. Pode-se afirmar que tais limitaÃ§Ãµes se devem
+a trÃªs problemas centrais: o uso de geometria projetiva clÃ¡ssica de pontos, sem 
+a geometria diferencial necessÃ¡ria para modelar estruturas mais gerais; o uso
+sub-Ã³timo de mÃºltiplas imagens; e a necessidade de models 3D mais
 estruturados.
 
-O grupo de pesquisa do prof.\ Ricardo Fabbri tem tradição em um novo paradigma
-fotogramétrico para a reconstrução 3D de objetos rígidos e não-rígidos a partir
-de múltiplas imagens e
-vídeo~\cite{Fabbri:Kimia:IJCV2016,Fabbri:PhD:2010,Fabbri:Giblin:Kimia:ECCV12,Fabbri:Kimia:EMMCVPR2005,Fabbri:Kimia:CVPR10,Usumezbas:Fabbri:Kimia:CVPR:2017,Usumezbas:Fabbri:Kimia:ECCV16}.
-A pesquisa do prof.\ Fabbri tem como objetivo suplantar as limitações
-supracitadas da tecnologia usual de reconstrução 3D, a qual é baseada em (e
+O grupo de pesquisa do prof.\ Ricardo Fabbri tem tradiÃ§Ã£o em um novo paradigma
+fotogramÃ©trico para a reconstruÃ§Ã£o 3D de objetos rÃ­gidos e nÃ£o-rÃ­gidos a partir
+de mÃºltiplas imagens e
+vÃ­deo~\cite{Fabbri:Kimia:IJCV2016,Fabbri:PhD:2010,Fabbri:Giblin:Kimia:ECCV12,Fabbri:Kimia:EMMCVPR2005,Fabbri:Kimia:CVPR10,Usumezbas:Fabbri:Kimia:CVPR:2017,Usumezbas:Fabbri:Kimia:ECCV16}.
+A pesquisa do prof.\ Fabbri tem como objetivo suplantar as limitaÃ§Ãµes
+supracitadas da tecnologia usual de reconstruÃ§Ã£o 3D, a qual Ã© baseada em (e
 limitada por) pontos de interesse. Uma das formas para se atingir esse objetivo
-é empregando-se a informação disponível em curvas perceptuais em imagens,
-através de um modelo 3D com progressivos níveis de detalhes baseado no chamado
-\emph{3D curve sketch} (esboço 3D de curvas) e o \emph{3D curve drawing}
-(desenho 3D de curvas). Tendo obtido um esboço inicial dos objetos 3D através do
-casamento de curvas ao longo das múltiplas imagens, o modelo 3D pode ser
-refinado em um grafo de curvas, similar a um desenho 3D. Superfícies podem ser
-estendidas sobre esse desenho 3D para gerar uma reconstrução detalhada e
-robusta a iluminação. Além da proposta do paradigma baseado em curvas, prof.\
-Fabbri e colaboradores foram os primeiros a introduzir a ténica
-CAD chamada Lofting à visão computacional em uma versão automática.
+Ã© empregando-se a informaÃ§Ã£o disponÃ­vel em curvas perceptuais em imagens,
+atravÃ©s de um modelo 3D com progressivos nÃ­veis de detalhes baseado no chamado
+\emph{3D curve sketch} (esboÃ§o 3D de curvas) e o \emph{3D curve drawing}
+(desenho 3D de curvas). Tendo obtido um esboÃ§o inicial dos objetos 3D atravÃ©s do
+casamento de curvas ao longo das mÃºltiplas imagens, o modelo 3D pode ser
+refinado em um grafo de curvas, similar a um desenho 3D. SuperfÃ­cies podem ser
+estendidas sobre esse desenho 3D para gerar uma reconstruÃ§Ã£o detalhada e
+robusta a iluminaÃ§Ã£o. AlÃ©m da proposta do paradigma baseado em curvas, prof.\
+Fabbri e colaboradores foram os primeiros a introduzir a tÃ©nica
+CAD chamada \emph{Lofting} de interpolaÃ§Ã£o de curvas por superfÃ­cies Ã  visÃ£o
+computacional em uma versÃ£o automÃ¡tica.
 
-Este projeto objetiva unir a pesquisa em aprendizagem de máquina baseada em
-difusão em grafos -- proveniente da
-colaboração entre os orientadores prof.\ Ricardo Fabbri e prof.\ Francisco
-Duarte Moura neto --  com a pesquisa específica em reconstrução 3D do prof.\
-Fabbri, visando melhores algoritmos para inicializar modelos de câmera e de
-objetos curvilíneos com pouca textura. A ideia principal é capitalizar nos
-avanços recentes e de alto impacto realizados pelo prof.\ Fabbri durante sua
-estadia no ICERM / Brown University, ao final de 2018 e no início de 2019 como
-organizador do Research Cluster em ``Visão Algébrica'', reunindo os melhores
-professores visitantes e seus alunos de doutorado. No início de 2019, o grupo
-organizado pelo prof.\
-Fabbri conseguiu levar consigo o ex-aluno de mestrado do IPRJ David da Costa de
-Pinho, e sua tese de mestrado desenvolvida no IPRJ teve grandes desdobramentos.
-Este projeto tambem almeja captalizar no sucesso e grande interesse demonstrado
-pela comunidade internacional nesta dissertação de mestrado do aluno do IPRJ.
-Apesar dos problemas algébricos locais terem sofrido grande avanço durante a
-estadia de David e Fabbri no ICERM/Brown University, ainda restam dois problemas
-chave: 1) como encontrar o melhor problema inicial para aumentar a velocidade da
-continuação homotópica para calcular configurações de três câmeras para novas
-imagens, e 2) como integrar a informação local para se utilizar a estrutura
-global de curvas.
+Este projeto Ã© um segundo projeto de doutorado que objetiva unir a pesquisa em
+aprendizagem de mÃ¡quina baseada em difusÃ£o em grafos -- proveniente da
+colaboraÃ§Ã£o entre os orientadores prof.\ Ricardo Fabbri e prof.\ Francisco
+Duarte Moura neto --  com a pesquisa especÃ­fica em reconstruÃ§Ã£o 3D do prof.\
+Fabbri. O primeiro projeto nesta linha foi da aluna de doutorado Juliana
+Ventura, em andamento, o qual visa melhores algoritmos para inicializar modelos
+de cÃ¢mera e de objetos curvilÃ­neos com pouca textura; ou seja, visa os estÃ¡gios
+iniciais dos sistemas de reconstruÃ§Ã£o 3D. O presente projeto, em
+contraste, visa os estÃ¡gios finais de reconstruÃ§Ã£o 3D que tratam da reconstruÃ§Ã£o
+3D de superfÃ­cies usando-se curvas, mais especificamente a reconstruÃ§Ã£o de
+superfÃ­cies de oclusÃ£o usando-se contornos aparentes (\emph{apparent contours}).
 
-Com o acabouço de aprendizagem de máquina trabalhado entre os prof.\ Fabbri e
-prof.\ Moura Neto nos últios anos, que envolve difusão em grafos e Teoria de
-Padrões, é possível no problema 1) treinar um mapa
-entre as entradas de três pontos-tangentes em curvas e os 11 graus de liberdade
-de soluções iniciais para a escrita de um \emph{solver} rápido por continuação
-homotópica, realizando aprendizagem com sistemas dinâmicos de soluções
-algébricas; e 2) realizar a estimativa inicial de um sistema de câmeras a partir
-de três imagens, explorando-se a estrutura global de curvas. O uso de três
-imagens fornece uma dimensionalidade e estrutura interessante: equações bem
-definidas, estrutura de curvas em duas e três dimensões, bem como um espaço de
-11 dimensões descrevendo três câmeras. Apenas duas imagens não
-permitiria o uso de estruturas curvilíneas para a estimação de câmeras, e o estudo
-de mais de três imagens cai em problemas genéricos de aprendizagem e otimização
-e intratabilidade, com pouca robustez. Mais detalhes são fornecidos a seguir.
+% XXX fig dos tipos de curvas
 
-\section{Reconstrução do Desenho 3D a partir de múltiplas perspectivas}
-Esta seção resume o trabalho anterior de Fabbri~\etal sobre o paradigma do
-Desenho 3D para reconstrução de cenas (coleções de objetos) a partir de múltiplas imagens.
-O fundamento matemático está presente em~\cite{fabbri2016multiview},
+A ideia principal Ã© capitalizar nos avanÃ§os recentes e de alto impacto
+realizados pelo prof.\ Fabbri durante sua estadia no ICERM / Brown University,
+ao final de 2018 e no inÃ­cio de 2019 como organizador do Research Cluster em
+``VisÃ£o AlgÃ©brica'', onde reuniu os melhores professores visitantes e seus alunos
+de doutorado para investigar os problemas desta pesquisa. No inÃ­cio de 2019, o
+grupo organizado pelo prof.\ Fabbri conseguiu levar consigo o ex-aluno de
+mestrado do IPRJ David da Costa de Pinho, e sua tese de mestrado desenvolvida no
+IPRJ teve grandes desdobramentos. Durante a estadia do prof. Fabbri no ICERM,
+um dos professores que estavam participando do programa \emph{Nonlinear
+Algebra} ao final de 2018 foi o pesquisador Peter Olver, um matemÃ¡tico dentre os
+mais produtivos do mundo, que trabalha tambÃ©m em visÃ£o computacional e Ã©
+considerado um dos expoentes dos invariantes diferenciais. Peter Olver e o prof.
+Fabbri iniciaram uma colaboraÃ§Ã£o mais intensa em 2020, quando Olver enviou
+alguns preprints para o prof.\ Fabbri abordando o problema de reconstruÃ§Ã£o 3D
+por tÃ©cnicas de invariantes diferenciais. Em especial, os preprints de Olver
+formulam o problema da reconstruÃ§Ã£o 3D de superfÃ­cies como um problema da
+reconstruÃ§Ã£o 3D de sinais atravÃ©s de um conjunto de \emph{assinaturas} desses
+sinais. Um problema especÃ­fico que se iniciou junto ao aluno Cleuber Ã© a
+reconstruÃ§Ã£o 3D de superfÃ­cies atravÃ©s da assinatura geomÃ©trica gerada por uma
+famÃ­lia de curvas em um vÃ­deo. Tal problema jÃ¡ havia sido abordado por
+Fabbri~\cite{Fabbri:Kimia:IJCV2016}, porÃ©m a sofisticaÃ§Ã£o matemÃ¡tica de Olver
+serÃ¡ necessÃ¡ria para levar essas tÃ©cnicas adiante, permitindo
+incorporadar algumas tÃ©cnicas de reconstruÃ§Ã£o 3D de superfÃ­cies em um sistema
+prÃ¡tico de fotogrametria digital.
+
+Com o acabouÃ§o de aprendizagem de mÃ¡quina trabalhado entre os prof.\ Fabbri e
+prof.\ Moura Neto nos Ãºltios anos, que envolve difusÃ£o em grafos e Teoria de
+PadrÃµes, juntamente com as tÃ©cnicas do prof.\ Peter Olver, serÃ¡ possÃ­vel
+alavancar o \emph{expertise} de equaÃ§Ãµes diferenciais do prof.\ Moura Neto aos problemas de
+reconstruÃ§Ã£o 3D trabalhados no grupo do prof.\ Fabbri. Em especial, a aplicaÃ§Ã£o
+prÃ¡tica de reconstruÃ§Ã£o 3D da superfÃ­cie do mar a partir de mÃºltiplas cÃ¢meras de
+vÃ­deo serÃ¡ abordado, sendo muitos dos casos curvas de oclusÃ£o conforme descrito
+nos preprints de Olver.
+
+
+\section{ReconstruÃ§Ã£o do Desenho 3D a partir de mÃºltiplas perspectivas}
+Esta seÃ§Ã£o resume o trabalho anterior de Fabbri~\etal sobre o paradigma do
+Desenho 3D para reconstruÃ§Ã£o de cenas (coleÃ§Ãµes de objetos) a partir de mÃºltiplas imagens.
+O fundamento matemÃ¡tico estÃ¡ presente em~\cite{fabbri2016multiview},
 relacionando as propriedades diferencias de uma curva 3D
-$\Gamma(S)$, onde $\Gamma$ é um ponto 3D (possivelmente em uma curva) no sistema
-de coordenadas de câmera, e $S$ is é uma parametrização da curva 2D
-correspondente, $\gama(s)$, onde $\gama$ é um ponto em uma imagem e $s$ é uma
-parametrização da curva 3D. Usando-se a relação
-$\Gamma(S) = \rho(s) \gama(S)$, onde $\rho$ é a profindidade do ponto
+$\Gamma(S)$, onde $\Gamma$ Ã© um ponto 3D (possivelmente em uma curva) no sistema
+de coordenadas de cÃ¢mera, e $S$ is Ã© uma parametrizaÃ§Ã£o da curva 2D
+correspondente, $\gama(s)$, onde $\gama$ Ã© um ponto em uma imagem e $s$ Ã© uma
+parametrizaÃ§Ã£o da curva 3D. Usando-se a relaÃ§Ã£o
+$\Gamma(S) = \rho(s) \gama(S)$, onde $\rho$ Ã© a profindidade do ponto
 denotado por $\Gama$, a geoemtria diferencial da curva 3D
 $\{
-\boldsymbol{T},\boldsymbol{N},\boldsymbol{B}, K, \dot{K},\tau, G,G',G''\}$ é
-relacionada à geometria diferencial da curva 
+\boldsymbol{T},\boldsymbol{N},\boldsymbol{B}, K, \dot{K},\tau, G,G',G''\}$ Ã©
+relacionada Ã  geometria diferencial da curva 
 $\{\boldsymbol{\gamma},
 \boldsymbol{t}, \boldsymbol{n}, \kappa, \dot{\kappa}, g, g', g'',\rho,
 \rho',\rho'',\rho'''\}$, onde
-$\{\boldsymbol{T},\boldsymbol{N},\boldsymbol{B}\}$ é o triedro de Frenet da
-curva 3D, \ie, a tangente, normal e binormal unitário, 
-$K$ e $\tau$ são as curvatura e torção and torsion da curva espacial, resp.,
-$\kappa$ é a curvatura da curva numa imagem, e $G$ e $g$ são as velocidades de
-parametrização das curvas 3D e 2D, resp., e onde
-`` $'$ " e `` $\cdot$ " simbolizam a diferenciação relativa a um parâmetro
-espacial arbitrário ($S$ ou $s$) ou parametrização por comprimento de arco,
+$\{\boldsymbol{T},\boldsymbol{N},\boldsymbol{B}\}$ Ã© o triedro de Frenet da
+curva 3D, \ie, a tangente, normal e binormal unitÃ¡rio, 
+$K$ e $\tau$ sÃ£o as curvatura e torÃ§Ã£o and torsion da curva espacial, resp.,
+$\kappa$ Ã© a curvatura da curva numa imagem, e $G$ e $g$ sÃ£o as velocidades de
+parametrizaÃ§Ã£o das curvas 3D e 2D, resp., e onde
+`` $'$ " e `` $\cdot$ " simbolizam a diferenciaÃ§Ã£o relativa a um parÃ¢metro
+espacial arbitrÃ¡rio ($S$ ou $s$) ou parametrizaÃ§Ã£o por comprimento de arco,
 resp. 
 
-Note-se que $\dot{\kappa}$ e $\dot{K}$ compõe modelos intrínsecos das curvas. 
+Note-se que $\dot{\kappa}$ e $\dot{K}$ compÃµe modelos intrÃ­nsecos das curvas. 
 Foi demonstrado pela primeira vez por Fabbri~\etal~\cite{fabbri2016multiview} como
-essas quantias estão relacionadas. Por exemplo, o vetor tangente à curva
+essas quantias estÃ£o relacionadas. Por exemplo, o vetor tangente Ã  curva
 espacial pode ser escrito como 
-$\boldsymbol{T}=\rho'\boldsymbol{\gamma}+\rho g \boldsymbol{t}$, e a tangente à
-curva projetada é $\boldsymbol{t}=\frac{\boldsymbol{T}-e^T_3\boldsymbol{T}
+$\boldsymbol{T}=\rho'\boldsymbol{\gamma}+\rho g \boldsymbol{t}$, e a tangente Ã 
+curva projetada Ã© $\boldsymbol{t}=\frac{\boldsymbol{T}-e^T_3\boldsymbol{T}
 \boldsymbol{\gamma}}{||\boldsymbol{T}-e^T_3\boldsymbol{T}
-\boldsymbol{\gamma}||}$,  onde $e_3^T=(0,0,1)$. Outro exemplo é que a razão das
-velocidades de parametrização é uma quantia intrínseca
+\boldsymbol{\gamma}||}$,  onde $e_3^T=(0,0,1)$. Outro exemplo Ã© que a razÃ£o das
+velocidades de parametrizaÃ§Ã£o Ã© uma quantia intrÃ­nseca
 $\frac{g}{G}=\frac{||\boldsymbol{T}-e^T_3\boldsymbol{T}
-\boldsymbol{\gamma}||}{e^T_3\boldsymbol{T}}$. Também foi demonstrada a
-reconstrução de uma curva espacial (\ie, de torção não-nula) pela primeira vez na literatura.
+\boldsymbol{\gamma}||}{e^T_3\boldsymbol{T}}$. TambÃ©m foi demonstrada a
+reconstruÃ§Ã£o de uma curva espacial (\ie, de torÃ§Ã£o nÃ£o-nula) pela primeira vez na literatura.
 
 
-Essas relações são muito impotantes para se relacionar três ou mais imagens 
+Essas relaÃ§Ãµes sÃ£o muito impotantes para se relacionar trÃªs ou mais imagens 
 de multiplas vistas ou para reconstruir-se uma cena: foi mostrado como 
 a geometria diferencial em duas vistas (tangente, curvatura, e
 derivada da curvatura) reconstroem a geometria diferencial em 3D (tangente,
-curvatura e torção em 3D), Figure~\ref{fig:WW1}
-Neste projeto, focaremos na continuidade da pesquisa de Fabbri no ICERM/Brown
-University iniciada por seu aluno de mestrado David de Pinho, a qual foca 
-nas propriedades de primeira ordem (tangente) como um primeiro porém
-importantíssimo passo que já despertou grande interesse da comunidade
-científica e industrial (no ramo de realidade aumentada e reconstrução de
-fluidos).
+curvatura e torÃ§Ã£o em 3D), Figure~\ref{fig:WW1}
+
+{\em
+  Neste projeto, focaremos na continuidade da pesquisa conjunta de Fabbri com
+  Moura Neto e Olver iniciada em 2020 (apÃ³s Fabbri ter conhecido Olver lno
+ICERM/Brown University). Em especial, neste projeto focaremos nos problemas em
+torno das equaÃ§Ãµes diferenciais de movimento contÃ­nuo propostas por Fabbri~\cite{fabbri2016multiview},
+as quais regem o movimento de uma curva de contorno de uma superfÃ­cie suave vista por
+um vÃ­deo, em termos do movimento da cÃ¢mera e da geometria da superfÃ­cie.}
 
 \begin{figure}[h]
     \centering
     a\includegraphics[width=0.45 \linewidth]{figs/FigureWW1/image51.png}\ 
     b\includegraphics[width=0.45 \linewidth]{figs/FigureWW1/image211.png}
     c\includegraphics[width=0.45 \linewidth]{figs/FigureWW1/image18.png}
-\caption{A geometria diferencial de uma curva 3D e suas projeções são
-  relacionadas por equações, no caso um modelo local de primeira ordem (vetor
-  tangente) em duas imagens reconstroem as tangentes no espaço tridimensional,
-  e, através deste, as tangentes (modelos locais) em outras imagens.
+\caption{A geometria diferencial de uma curva 3D e suas projeÃ§Ãµes sÃ£o
+  relacionadas por equaÃ§Ãµes, no caso um modelo local de primeira ordem (vetor
+  tangente) em duas imagens reconstroem as tangentes no espaÃ§o tridimensional,
+  e, atravÃ©s deste, as tangentes (modelos locais) em outras imagens.
 }
     \label{fig:WW1}
     \vspace{-0.2cm}
 \end{figure}
-A linha de trabalhos mais práticos de Fabbri~\etal\ permite extrair um desenho
-3D e superfícies acopladas, representando objetos vistos por imagens. 
-As etapas desse sistema prático de reconstrução 3D são ilustradas na
-figura~\ref{fig:lofting:pipeline}, sendo que nem todos os módulos ainda foram
+A linha de trabalhos mais prÃ¡ticos de Fabbri~\etal\ permite extrair um desenho
+3D e superfÃ­cies acopladas, representando objetos vistos por imagens. 
+As etapas desse sistema prÃ¡tico de reconstruÃ§Ã£o 3D sÃ£o ilustradas na
+figura~\ref{fig:lofting:pipeline}, sendo que nem todos os mÃ³dulos ainda foram
 publicados.
-De maneira resumida, uma vez que as posições de câmeras tenham sido calculadas,
-usando-se o trabalho desenvolvido por Fabbri junto ao aluno David de Pinho,
-e junto ao célebre matemático Peter Giblin,
-cada segmento de curva em uma imagem busca porções correspondentes de curvas em
-alguma outra imagem para assim hipotetizar um fragmento de curva 3D, hipótese
-esta que é confirmada ou refutada reprojetando-se em outras imagens. Esse
+De maneira resumida, uma vez que as posiÃ§Ãµes de cÃ¢meras tenham sido calculadas,
+usando-se o trabalho desenvolvido por Fabbri junto ao ex-aluno do IPRJ David de Pinho,
+e junto ao cÃ©lebre matemÃ¡tico Peter Giblin,
+cada segmento de curva em uma imagem busca porÃ§Ãµes correspondentes de curvas em
+alguma outra imagem para assim hipotetizar um fragmento de curva 3D, hipÃ³tese
+esta que Ã© confirmada ou refutada reprojetando-se em outras imagens. Esse
 processo resulta em um conjunto inicial desorganizado de fragmentos 3D
-denominado ``esboço 3D de
+denominado ``esboÃ§o 3D de
 curvas''~\cite{fabbri2011multiview,fabbri2016multiview},
-Figure~\ref{fig:lofting:pipeline} (\emph{3D curve sketch}). Neste estágio
-inicial de reconstrução, o esboço 3D de curvas sofre de erros de agrupamentos e
-fragmentações, além de redundância já que a informação ainda não foi integrada
+Figure~\ref{fig:lofting:pipeline} (\emph{3D curve sketch}). Neste estÃ¡gio
+inicial de reconstruÃ§Ã£o, o esboÃ§o 3D de curvas sofre de erros de agrupamentos e
+fragmentaÃ§Ãµes, alÃ©m de redundÃ¢ncia jÃ¡ que a informaÃ§Ã£o ainda nÃ£o foi integrada
 para diferentes pares de imagens, o que motivou Fabbri~\etal~\cite{usumezbas2016multiview}
 a explorar a conectividade topologica  para produzir um grafo conexo de
 curvas longas, denominado ``desenho 3D de curvas'', ver terceira linha na
@@ -357,105 +370,62 @@ Figura~\ref{fig:lofting:pipeline}.
     \includegraphics[width=\linewidth]{figs/lofting-pipeline.png}
   \end{center}
 %  \ReduceBeforeCaptionfigspace
-  \caption{Uma ilustração de um sistema completo de visão 3D baseado em curvas e
-  superfícies. Muitos desses módulos ainda estão em desenvolvimento.}
+  \caption{Uma ilustraÃ§Ã£o de um sistema completo de visÃ£o 3D baseado em curvas e
+  superfÃ­cies. Muitos desses mÃ³dulos ainda estÃ£o em desenvolvimento. \emph{Este
+projeto se concentra nos Ãºltimos dois mÃ³dulos em laranja: ``Reconstruction of
+Connectivity and Occluding Contours e ''Reconstruction of Curved Surfaces``.}}
 %  \ReduceAfterCaptionfigspace
   \label{fig:lofting:pipeline}
 \end{figure*}
 
 \section{Objetivos}
 
-Na Figura~\ref{fig:lofting:pipeline} ilustrando os módulos do sistema de
-reconstrução 3D que compõe a pesquisa do prof.\ Fabbri, pretende-se abordar as
-caixas em verde na primeira linha, em especial o módulo ``Curve-Based Trifocal
-Pose Estimation'', usando-se ferramentas de aprendizagem de máquina baseada em
-difusão em grafos e teoria de padrões.
-
-\section{Aprendizagem de caminhos em \emph{solvers} por continuação homotópica}
-Pretende-se explorar a estrutura de sistemas dinâmicos proveniente do
-rastreamento de soluções de equações não-lineares algébricas para produzir um solver
-rápido baseado em continuação homotópica. Durante a estadia do prof.\ Fabbri
-liderando um ``research cluster'' (grupo de pesquisa temporário, similar a um workshop de
-longa duração), foi produzido, pela primeira vez, um novo \emph{solver} para o
-problema de se determinar a posição relativa de três câmeras a partir de três
-imagens de curvas, Figura~\ref{fig:WW1}. Foi determinado que o problema é
-sobredeterminado, e ignorando-se uma tangente, o problema se reduz a um
-polinômio de grau 320~\cite{fabbri:arxiv:2019}. Foi produzido um solver rápido e
-determinístico com técnicas estado da arte de geometria algébrica numérica no
-rastreamento de soluções por continuação homotópica, resolvendo 11 variáveis de
-três câmeras (rotação e translação) na ordem de 600ms.  No entanto, diversas
-aplicações práticas requerem um tempo de execução em nanosegundos ou mesmo
-microsegundos. Um dos objetivos deste projeto é aprender a estrutura das
-equações e das trajetórias desse sistema dinâmico realizado pelo \emph{solver}, de forma a
-melhor inicializar as 320 soluções o mais próximo possível do resultado final.
-No entanto, o comportamento dessas trajetórias é pouco conhecido dos
-pesquisadores em geometria algébrica.
-Pretende-se, para isso, aprender o comportamento das trajetórias e utilizar o
-conhecimento de equações diferencias do prof.\ Francisco Moura Neto.
-
-\begin{figure}
-   \centering
-   \begin{tabular}{cc}
-   \includegraphics[width=0.4\linewidth]{figs/data-sphere-new-v2}\\
-   \includegraphics[width=0.4\linewidth]{figs/syntheticSampleImagesStereSm.png}
-   \end{tabular}
-   \caption{Dados de ``treinamento'' fornecendo uma amostra representativa de
-     100 configurações iniciais. Em cada imagem, o solver por continuação
-     homotópica fornece trajetórias que podem ser aprendidas e otimizadas, para
-     gerar um solver muito rápido.
-   }% (Dataset evolved from~\cite{Fabbri:Giblin:Kimia:ECCV12,Fabbri:Kimia:IJCV2016}) }
-\label{fig:synth:data:sample}
-\end{figure}
-
-\section{Geometria trifocal de curvas curvas: de local a global}
+Na Figura~\ref{fig:lofting:pipeline} ilustrando os mÃ³dulos do sistema de
+reconstruÃ§Ã£o 3D que compÃµe a pesquisa do prof.\ Fabbri, \emph{pretende-se concentrar
+nos Ãºltimos dois mÃ³dulos em laranja: ``Reconstruction of Connectivity and
+Occluding Contours e ''Reconstruction of Curved Surfaces``.}
+usando-se ferramentas de aprendizagem de mÃ¡quina baseada em
+difusÃ£o em grafos e teoria de padrÃµes, bem como invariantes diferenciais dentro
+da teoria de equaÃ§Ãµeds diferenciais.
 
 
-O segundo grande objetivo deste trabalho é levar o \emph{solver} local citado na
-seção anterior à construção de um \emph{solver} global, que utilize não apenas
-triplas de pontos-tangentes nas curvas, como também integre solução na curva toda.
-Ao mesmo tempo, isto permite resolver o problema da correspondência entre
-curvas, através de um sistema de hipotetizar-e-testar.
+\section{Objetivo Final: ReconstruÃ§Ã£o 3D de curvas de OclusÃ£o}
 
-Seja um conjunto de fragmentos de curvas em correspondência hipotética
-$C_f$, $f=1, 2, ...,, F$ em $F$ imagens. Seja $\alpha(\xi)$ 
-a curva de alinhamento definida por
-\[
-\alpha (\xi)= (s_1(\xi), s_2(\xi), ....., s_F(\xi)), \quad\quad \xi\in[0,1],
-\]
-tal que os pontos $\{C_1(s_1(\xi)), C_2(s_2(\xi)), ....., C_F(s_F(\xi))\}$ estão
-em correspondência. Usa-se a notação $\alpha_{ij}(\xi) = \left(
-s_i(\xi),s_j(\xi) \right)$ para simbolizar o alinhamento entre fragmentos $i$ e
-$j$.
+\subsection{Sistema prÃ¡tico}
+Dada uma curva em uma imagem que restou apÃ³s a reconstruÃ§Ã£o 3D de curvas fixas,
+as curvas que sobram podem ser perfis de surperfÃ­cies em 3D. Primeiramente, um
+sistema prÃ¡tico poderÃ¡ testar se esta curva Ã© provieniente de uma superfÃ­cie ou
+nÃ£o.
+Testaremos primeiro essa curva como se fosse proveniente de uma superfÃ­cie, e
+geraremos uma reconstruÃ§Ã£o 3D de uma hipÃ³tese de superfÃ­cie local. Em seguida,
+testaremos essas hipÃ³teses de que a curva Ã© proveniente de uma superfÃ­cie.
+Primeiramente, essa curva em 2D precisa ser casada / rastreada ao logo de pelo
+menos trÃªs imagens (por exemplo, o proÃ³ximo quadro e o quadro anterior do
+vÃ­deo), jÃ¡ que a teoria do prof.\ Fabbri prevÃª que trÃªs imagens sÃ£o necessÃ¡rias
+para uma reconstruÃ§Ã£o local. Uma vez que uma hipÃ³tese de superfÃ­cie em 3D
+consistente com as curvas 2D Ã© gerada, pode-se conferir se essa hipÃ³tese Ã©
+fotoconsistente com outras imagens em que esta superfÃ­cie Ã© fotografada de
+maneira direta. Isso pode ser feito parametrizando-se a superfÃ­cie com uma
+grade, e projetando-se esta grade de pontos de forma que as mÃºltiplas cores
+interpoladas sejam minimamente consistentes ao longo de outras imagens.
+Se essa hipÃ³tese de superfÃ­cie local for fotoconsistente, entÃ£o ela farÃ¡ parte
+da reconstruÃ§Ã£o 3D. A consistÃªncia global dessas hipÃ³teses locais pode ser
+inferida usando-se os modelos de aprendisagem de mÃ¡quina baseados em difusÃ£o,
+estudos por Moura Neto e Fabbri. 
 
-Dado o alinhamento entre quaisquer dois fragmentos
-$\alpha_{ij}$, pode-se recostruir a geometria epipolar (representando a
-disposição relativa entre as imagens), já que 
-$\xi\in[0,1]$ gera inúmeros pares em correspondência, \eg,
-$\xi_1,\xi_2,\dots,\xi_7$ fornece sete pontos
-$\left( C_1(s_1(\xi_i)),\,C_2(s_2(\xi_i)) \right)$,
-$i=1,2,\dots,7$. 
+\section{Objetivo TeÃ³rico: Expandir a abordagem teÃ³rica de Fabbri para outros
+grupos de projeÃ§Ã£o}
 
-Para o caso de interesse de três imagens,
-$\alpha_{12}(\xi)= (s_1,s_2)$ e $\alpha_{13}(\xi)= (s_1,s_3)$ fornece, a
-princípio,
-curvas de alinhamento independentes  $(C_1, C_2)$ e $(C_1, C_3)$. 
-No entanto, isto não é livre de restrições entre $(C_2,C_3)$.
-Na integração de informação local, mapas de difusão e teoria de padrões podem
-auxiliar; em particular a curva de alinhamento não é uma curva completamente
-livre, no início do sistema de reconstrução 3D, mas é parte do espaço de curvas
-monotônicas, cuja dimensão é restrita. Empregar esses tipos de algoritmos no
-caso de informação discreta é um dos pontos fortes da pesquisa com o prof.\ Mora
-NEto.
-
-\begin{figure}
-\centering
-\includegraphics[scale=0.5]{figs/tri-alignment-eps-converted-to.pdf}
-\caption{
-  Curva de alinhamento entre três curvas em três imagens.
-}
-\label{fig:trialign}
-\end{figure}
-
+A abordagem do prof.\ Fabbri para a reconstruÃ§Ã£o de curvas e superfÃ­cies permite
+a reconstruÃ§Ã£o 3D tanto do objeto como da posiÃ§Ã£o das
+cÃ¢meras~\cite{fabbri2016multiview}. Peter Olver tambÃ©m publicou um
+artigo recente que realiza muitas partes da mesma teoria. No entanto, apesar da
+teoria de Olver ser mais geral que teoria Euclidiana de Fabbri, os resultados
+alcanÃ§ados por Fabbri foram mais profundos, por exemplo sendo capaz de
+determinar a reconstruÃ§Ã£o 3D da torÃ§Ã£o de curvas, bem como determinar a equaÃ§Ã£o
+diferenciais de curvas e contornos de oclusÃ£o. Um dos objetivos iniciais desta
+pesquisa de doutorado seria procurar trazer a generalidade de Olver Ã 
+profundidade do trabalho de Fabbri.
 
 
 
@@ -614,82 +584,91 @@ NEto.
 %\paragraph{Impact}
 
 \section{Justificativa: as vantagens das curvas.}
-Além de possibilitarem as inúmeras aplicações do sistema proposto citadas no início da
-Introdução, as curvas como \emph{features} básicas para reconstrução 3D e
-calibração têm as seguintes vantagens.  As curvas provenientes de
-descontinuidade de bordas nas imagens são mais densas e mais bem-estruturadas do
+AlÃ©m de possibilitarem as inÃºmeras aplicaÃ§Ãµes do sistema proposto citadas no inÃ­cio da
+IntroduÃ§Ã£o, as curvas como \emph{features} bÃ¡sicas para reconstruÃ§Ã£o 3D e
+calibraÃ§Ã£o tÃªm as seguintes vantagens.  As curvas provenientes de
+descontinuidade de bordas nas imagens sÃ£o mais densas e mais bem-estruturadas do
 que pontos isolados, e representam eficientemente a imagem ou cena 3D
-subjacente. Elas fornecem um bom compromisso entre uma representação altamente
-redundante na forma de arrays de píxels, e uma representação altamente esparsa
-das nuvens de pontos de interesse. Isso permite o cálculo rápido de
-reconstruções 3D (os \emph{3D curve sketch}), que, apesar de não possuirem
-superfícies explícitas, são ainda reconhecíveis, estruturadas, e de eficiente
-manipulação e armazenagem. Essa efficiência representacional é evidenciada em
-uma tendência recente em computação gráfica de usar renderizações baseadas em
-curvas (\emph{line-based} rendering) para aplicações de internet que exigem
-eficiência, e também por razões estéticas. A riqueza estrutural de curvas é
-illustrada pelo fato de ser impossível registrar uma nova imagem não-calibrada
-com relação a uma nuvem de pontos 3D por si só, ao passo que essa tarefa se
-torna possível com curvas 3D dada a maior estruturação geométrica (\eg,
-reprojetando-se as curvas 3D na nova imagem e alinhando-as às curvas detectadas
-na imagem). Ademais, é bem sabido que representações basedas em bordas
-representam eficiente o conteúdo de uma imagem, o que motiva uma reconstrução de
-curvas 3D eficiente para armazenar a informação geométrica mais relevante de uma
-cena 3D. Curvas também têm maior invariância do que pontos de interesse a
-mudanças de iluminação, são mais estáveis sob uma maior separação entre as
-imagens, e são mais precisamente localizadas na direção normal. Ademais,
-estrutura de curvas de bordas em uma imagem é correlacionada com propriedades
-das superfícies subjacentes: curvas estacionárias (como as de reflectância) são
-condições de contorno para reconstrução de superfícies, e a variação de
-contornos de oclusão sob diferentes pontos de vista indica a curvatura da
-superfície
+subjacente. Elas fornecem um bom compromisso entre uma representaÃ§Ã£o altamente
+redundante na forma de arrays de pÃ­xels, e uma representaÃ§Ã£o altamente esparsa
+das nuvens de pontos de interesse. Isso permite o cÃ¡lculo rÃ¡pido de
+reconstruÃ§Ãµes 3D (os \emph{3D curve sketch}), que, apesar de nÃ£o possuirem
+superfÃ­cies explÃ­citas, sÃ£o ainda reconhecÃ­veis, estruturadas, e de eficiente
+manipulaÃ§Ã£o e armazenagem. Essa efficiÃªncia representacional Ã© evidenciada em
+uma tendÃªncia recente em computaÃ§Ã£o grÃ¡fica de usar renderizaÃ§Ãµes baseadas em
+curvas (\emph{line-based} rendering) para aplicaÃ§Ãµes de internet que exigem
+eficiÃªncia, e tambÃ©m por razÃµes estÃ©ticas. A riqueza estrutural de curvas Ã©
+illustrada pelo fato de ser impossÃ­vel registrar uma nova imagem nÃ£o-calibrada
+com relaÃ§Ã£o a uma nuvem de pontos 3D por si sÃ³, ao passo que essa tarefa se
+torna possÃ­vel com curvas 3D dada a maior estruturaÃ§Ã£o geomÃ©trica (\eg,
+reprojetando-se as curvas 3D na nova imagem e alinhando-as Ã s curvas detectadas
+na imagem). Ademais, Ã© bem sabido que representaÃ§Ãµes basedas em bordas
+representam eficiente o conteÃºdo de uma imagem, o que motiva uma reconstruÃ§Ã£o de
+curvas 3D eficiente para armazenar a informaÃ§Ã£o geomÃ©trica mais relevante de uma
+cena 3D. Curvas tambÃ©m tÃªm maior invariÃ¢ncia do que pontos de interesse a
+mudanÃ§as de iluminaÃ§Ã£o, sÃ£o mais estÃ¡veis sob uma maior separaÃ§Ã£o entre as
+imagens, e sÃ£o mais precisamente localizadas na direÃ§Ã£o normal. Ademais,
+estrutura de curvas de bordas em uma imagem Ã© correlacionada com propriedades
+das superfÃ­cies subjacentes: curvas estacionÃ¡rias (como as de reflectÃ¢ncia) sÃ£o
+condiÃ§Ãµes de contorno para reconstruÃ§Ã£o de superfÃ­cies, e a variaÃ§Ã£o de
+contornos de oclusÃ£o sob diferentes pontos de vista indica a curvatura da
+superfÃ­cie
 
-\paragraph{Impacto tecnológico.} curve-based multiview reconstruct has broad
-impacts in applications working with scenes that are largely textureless, as
-frequently occurring in indoor environments, {\em e.g.}, the Hololens project at
-Microsoft~\cite{nurutdinova2015towards}.  
+\paragraph{Impacto tecnolÃ³gico.} 
+As reconstruÃ§Ãµes 3D propostas, que vÃ£o alÃ©m de nÃºvem de pontos, tÃªm impactos em
+aplicaÃ§Ãµes que trabalho com cenas e objetos com baixa textura, como nos casos de
+objetos feitos pelo homem: cenas urbanas, cenas \emph{indoors}, carros, peÃ§as
+mecÃ¢nicas, etc. Um exemplo Ã© o projeto Hololens da Microsoft~\cite{nurutdinova2015towards}.  
 
 
 \section{Metas}
-\paragraph{Elaboração de Publicações}
-Como metas específica deste projeto, tem-se a elaboração de
-publicações (idealmente 1 por ano) nas principais revistas e conferências da área. Dentre as
+\paragraph{ElaboraÃ§Ã£o de PublicaÃ§Ãµes}
+Como metas especÃ­fica deste projeto, tem-se a elaboraÃ§Ã£o de
+publicaÃ§Ãµes (idealmente 1 ou mais por ano) nas principais revistas e conferÃªncias da Ã¡rea. Dentre as
 revistas visadas, temos: International
 Journal of Computer Vision, IEEE Pattern Analysis and Machine Intelligence, IEEE
 Transactions in Image Processing, Pattern Recognition, ACM Computing Surveys, e
-Journal of Mathematical Imaging and Vision. Também pretende-se enviar trabalhos
-completos (arigos) às mais importantes conferências na área, a saber: IEEE CVPR
+Journal of Mathematical Imaging and Vision. TambÃ©m pretende-se enviar trabalhos
+completos (arigos) Ã s mais importantes conferÃªncias na Ã¡rea, a saber: IEEE CVPR
 (Computer Vision and Pattern Recognition), IEEE ECCV (European Conference in
 Computer Vision), IEEE ICCV (International Conference in Computer Vision),  ACM
-SIGGRAPH, e o IEEE SIBIGRAPI.
+SIGGRAPH, e o IEEE SIBIGRAPI. Por se tratar de uma pesquisa interdisciplinar,
+tambÃ©m pretende-se publicar em periÃ³dicos em matemÃ¡tica pura, matemÃ¡tica aplicada
+e anÃ¡lise numÃ©rica.
 
 
 \section{Metodologia}
-A execução do projeto será dividida nas seguintes frentes, visando atingir as
-metas descritas na seção anterior, na ordem descrita na próxima seção:
+A execuÃ§Ã£o do projeto serÃ¡ dividida nas seguintes frentes, visando atingir as
+metas descritas na seÃ§Ã£o anterior, na ordem descrita na prÃ³xima seÃ§Ã£o:
 \begin{itemize}
-\item \textbf{Auto-calibração trifocal.} Será estudado o trabalho do prof.\
-  Fabbri e seu aluno David de Pinho, de forma compreender as soluções iniciais.
-  Inicialmente serão adquiridas e visualizadas as trajetórioas do solver por
-  continuação homotópica.  Esta etapa involve a compreensãl
-de um algoritmo a partir de uma teoria clara de geometria algébrica
-de diferencial, a ser desenvolvida em conjunto com o matemático Peter J.\ Giblin
-da Universidade de Liverpool.
-\item \textbf{Estudo de Geometria Algébrica Numérica.} Pretende-se estudar a solução de
-sistemas de equações algébricas de maneira aprofundada, para auxiliar no item
-anterior. Esta etapa também contará com reuniões com o matemático Peter J.\
-Giblin, dentre outros.
-\item \textbf{Validação e Experimentos de Larga escala.} Pretende-se realizar
-experimentos na reconstrução em larga escala de objetos industriais 
-partir de milhares de fotografias ou quadros de vídeo. A validação será
-realizada através de comparaçao com objetos conhecidos \emph{a priori}
-e impressos em impressoras 3D. O foco será encontrar objetos e cenas para os
-quais as técnicas do \emph{solver} estudado sejam imprescindíveis.
-\item \textbf{Desenvolvimento de Software livre para Visão Computacional.}
+\item \textbf{Estudo de reconstruÃ§Ã£o 3D usando geometria diferencial e equaÃ§Ãµes
+  diferenciais} 
+  SerÃ¡ estudado o trabalho do prof.\ Fabbri~\cite{fabbri2016multiview},
+  bem com o trabalho do prof.\ Olver~\cite{Kogan:Olver:LobachevskiiJMA2015},
+  procurando unir a generalidade Ã  profundidade de resultados de cada tÃ©cnica.
+  Ao mesmo tempo, a teoria necessÃ¡ria para a compreensÃ£o de ambos os artigos
+  serÃ¡ estudada.
+\item \textbf{Estudo e co-autoria dos preprints de Peter Olver.} 
+  SerÃ£o estudados e, possivelmente, co-autorados, dois preprints (nÃ£o publicados), enviados por Peter Olver ao
+  prof.\ Fabbri~\cite{Olver:Outline:Preprint:2020,Olver:Reprojn:Preprint:2020}. Ambos lidam com a reconstruÃ§Ã£o 3D das superfÃ­cies de objetos
+  como um problema de reconstruÃ§Ã£o de sinais a partir de assinaturas ligadas a
+  a invariantes. Nesse sentido, tambÃ©m serÃ¡ aprofundada Geometria Riemanniana,
+  equaÃ§Ãµes diferenciais e grupos de Lie.
+\item \textbf{Estudo de Mapas de DifusÃ£o e Teoria de PadrÃµes.} 
+  Para se atingir uma soluÃ§Ã£o global e para que se possa modelar certos
+  parÃ¢metros aprendendo-se de exemplos (dados), o aluno irÃ¡ estudar o livro de
+  Moura Neto e Fabbri sendo escrito sobre Mapas de DifusÃ£o e modelagem
+  computacional.
+\item \textbf{ValidaÃ§Ã£o e Experimentos de Larga escala.} Pretende-se realizar
+experimentos na reconstruÃ§Ã£o em larga escala de objetos industriais 
+partir de milhares de fotografias ou quadros de vÃ­deo. A validaÃ§Ã£o serÃ¡
+realizada atravÃ©s de comparaÃ§ao com objetos conhecidos \emph{a priori}
+e impressos em impressoras 3D. 
+\item \textbf{Desenvolvimento de Software livre para VisÃ£o Computacional.}
 Pretende-se continuar o desenvolvimento de software livre, como uma
-forma de contribuir para a sociedade, angariar colaborações,
+forma de contribuir para a sociedade, angariar colaboraÃ§Ãµes,
 garantir um controle de qualidade, e disseminar a pesquisa. 
-\item Elaboração de Publicações como descrito nas metas.
+\item ElaboraÃ§Ã£o de PublicaÃ§Ãµes como descrito nas metas.
 \end{itemize}
 
 
@@ -718,45 +697,46 @@ garantir um controle de qualidade, e disseminar a pesquisa.
 %\end{center}
 
 \section{Cronograma das Atividades}
-A tabela abaixo mostra o cronograma para as principais frentes de atuação descritas na
-seção anterior. Para a execução deste projeto, o período foi dividido em etapas aproximadamente
+A tabela abaixo mostra o cronograma para as principais frentes de atuaÃ§Ã£o descritas na
+seÃ§Ã£o anterior. Para a execuÃ§Ã£o deste projeto, o perÃ­odo foi dividido em etapas aproximadamente
 anuais.
 \begin{center}
 \begin{tabular} {||r|c|c|c|c||}
 \hline
 \textbf{Etapas anuais do doutorado} & 2 & 3 & 4 \\
 \hline
-Auto-calibração Trifocal & X &    & \\
+Estudo comparativo de~\cite{Fabbri:Kimia:IJCV2016} (prof. Fabbri)
+e~\cite{Kogan:Olver:LobachevskiiJMA2015} & X &    & \\
 \hline
-Estudo de Geometria Algébrica Numérica & X &    & \\
+Estudo e co-autoria dos preprints de Peter Olver~\cite{Olver:Reprojn:Preprint:2020,Olver:Outline:Preprint:2020} & X &    & \\
 \hline
-Estudo de Mapas de Difusão e Teoria de Padrões &  X & X &  \\
+Estudo de Mapas de DifusÃ£o e Teoria de PadrÃµes &  X & X &  \\
 \hline
 Experimentos de Larga Escala &     & X & X\\
 \hline
 Escrita de Software Livre &   X & X & X\\
 \hline
-Elaboração de Publicações &   X & X & X\\
+ElaboraÃ§Ã£o de PublicaÃ§Ãµes &   X & X & X\\
 \hline
 \end{tabular}
 \end{center}
 
-\section{Conclusão}
-Este projeto propõe o desenvolvimento da tecnologia computacional de base
-necessária para efetivar a praticidade de um novo
-paradigma baseado em curvas e superfícies para reconstrução 3D e calibração, complementando as
-presentes técnicas baseadas em pontos, as quais estão sendo usadas em larga
-escala. A tecnologia proposta extenderá a capacidade das técnicas atuais,
-permitindo o processamento de uma maior variedade de objetos de interesse
-industrial, ao mesmo tempo
-impondo menos restrições na aquisição. 
+\section{ConclusÃ£o}
+Este projeto propÃµe o avanÃ§o do 
+paradigma baseado em curvas e superfÃ­cies para reconstruÃ§Ã£o 3D e calibraÃ§Ã£o de
+cÃ¢meras, complementando as tÃ©cnicas atuais baseadas em pontos, as quais estÃ£o
+sendo usadas em larga escala. A tecnologia proposta extenderÃ¡ a capacidade das
+tÃ©cnicas atuais, permitindo o processamento de uma maior variedade de objetos de
+interesse industrial, ao mesmo tempo impondo menos restriÃ§Ãµes na aquisiÃ§Ã£o. 
+A pesquisa tambÃ©m irÃ¡ alavancar a colaboraÃ§Ã£o internacional com o matemÃ¡tico
+Peter Olver, que tambÃ©m pesquisa visÃ£o computacional.
 
 
 %\nocite{Fabbri:2002}
 \addcontentsline{toc}{section}{Refer\^{e}ncias}
 \bibliographystyle{ieeetr}
 %\bibliography{personal,strings,shading,multiview,motion,Kimia,catagorization,edge-linking,deformable,medical,graphics,active-contours,texture,imaging,tracking,shape-papers,bib-header,video,math-books,math,psych-books,metric,edge,leymarie_pami_scaffold,vision-books,vision,nn-search,multidimscaling,psychophysics,indexing,segmentation,image-databases,shape-matching,neuro,skeleton,skeleton2D,aspect-graphs,recognition,surface-networks,ridge,proceedings,perceptual-grouping,continuation,graph-matching-2,cooper}
-\bibliography{multiview,rf-multiview,Pajdla,ref}
+\bibliography{bib/fabbri-multiview,bib/fabbri-olver.bib,bib/kimia-multiview,bib/fabbri-machine-learning,bib/fabbri-vision,bib/fabbri-math-books,bib/fabbri-vision-books,bib/fabbri-video,bib/fabbri-recognition,bib/fabbri-indexing,bib/fabbri-proceedings,multiview,rf-multiview,Pajdla,ref}
 %
 % Assinaturas:
 %\newpage
