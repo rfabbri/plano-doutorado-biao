@@ -239,6 +239,26 @@ contraste, visa os estágios finais de reconstrução 3D que tratam da reconstru
 3D de superfícies usando-se curvas, mais especificamente a reconstrução de
 superfícies de oclusão usando-se contornos aparentes (\emph{apparent contours}).
 
+A Figura~\ref{fig:multiview:stereo} mostra um exemplo de técnica já bem
+estabelecida de reconstrução 3D de superfícies a partir de contornos de oclusão.
+Estas técnicas, porém, exigem aquisição controlada (condições de estúdio).
+O objetivo da pesquisa do Fabbri é trabalhar com aquisição não-controlada.
+\begin{figure}
+\begin{center}
+  \includegraphics[width=0.5\linewidth]{figs/multiview-stereo-white.png}
+\end{center}
+   \caption{
+A reconstrução 3D clássica a partir de perfis de superfícies~\cite{Hernandez:Schmitt:CVIU04}
+fornece modelos detalhados (direita), porém exigem condições altamente
+controladas de aquisição. Elas são inicializadas pelo fecho convexo visual do
+objeto (esquerda), matematicamente o envelope de uma família de superfícies retroprojetadas a
+partir de uma família de curvas 2D (obtidas filmando-se o contorno do objeto a
+partir de múltiplas perspectivas).
+}
+\label{fig:multiview:stereo}
+\end{figure}
+
+
 % XXX fig dos tipos de curvas
 
 A ideia principal é capitalizar nos avanços recentes e de alto impacto
@@ -378,6 +398,7 @@ Connectivity and Occluding Contours e ''Reconstruction of Curved Surfaces``.}}
   \label{fig:lofting:pipeline}
 \end{figure*}
 
+
 \section{Objetivos}
 
 Na Figura~\ref{fig:lofting:pipeline} ilustrando os módulos do sistema de
@@ -400,8 +421,8 @@ Testaremos primeiro essa curva como se fosse proveniente de uma superfície, e
 geraremos uma reconstrução 3D de uma hipótese de superfície local. Em seguida,
 testaremos essas hipóteses de que a curva é proveniente de uma superfície.
 Primeiramente, essa curva em 2D precisa ser casada / rastreada ao logo de pelo
-menos três imagens (por exemplo, o proóximo quadro e o quadro anterior do
-vídeo), já que a teoria do prof.\ Fabbri prevê que três imagens são necessárias
+menos três imagens (por exemplo, o próximo quadro e o quadro anterior do
+vídeo), Figura~\ref{fig:vj}, já que a teoria do prof.\ Fabbri prevê que três imagens são necessárias
 para uma reconstrução local. Uma vez que uma hipótese de superfície em 3D
 consistente com as curvas 2D é gerada, pode-se conferir se essa hipótese é
 fotoconsistente com outras imagens em que esta superfície é fotografada de
@@ -412,6 +433,18 @@ Se essa hipótese de superfície local for fotoconsistente, então ela fará par
 da reconstrução 3D. A consistência global dessas hipóteses locais pode ser
 inferida usando-se os modelos de aprendisagem de máquina baseados em difusão,
 estudos por Moura Neto e Fabbri. 
+\begin{figure}
+\centering
+\includegraphics[scale=1]{figs/dynamic_curve_fragment-eps-converted-to.pdf}
+\caption{
+Hipótese local de superfície surge ligando-se uma família de curvas nas imagens.
+Os segmentos de retas representam bordas de objetos nas imagens, e a família de
+curvas é gerada variando-se o ponto de vista da câmera.
+}
+\label{fig:vj}
+\end{figure}
+
+
 
 \subsection{Objetivo Teórico: Expandir a abordagem teórica de Fabbri para outros
 grupos de projeção}
