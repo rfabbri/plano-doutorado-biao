@@ -180,7 +180,7 @@ Ricardo Fabbri, do laboratório de visualização, e o prof.\ Francisco Duarte
 Moura Neto, do laboratório de tecnologia da informação (LTI), juntando-se os
 aspectos ativos recentemente das pesquisas de ambos. Pretende-se trabalhar em
 conjunto com outros grupos de pesquisa além desses dois laboratórios dentro do
-IPRJ, bem como outros pesquisadores no IMPA e em outras instituiçõs em
+IPRJ, bem como outros pesquisadores no IMPA e em outras instituições em
 colaboração internacional na realização de projetos e publicação de artigos.
 Dentre as instituições internacionais envolvidas, tem-se: University of
 Minneapolis (com Peter Olver), Brown University (com Benjamin Kimia) e
@@ -189,7 +189,7 @@ University of Liverpool (com Peter Giblin).
 \section{Introdução}
 
 
-Na presente década está-se presenciando um nível de investimentos sem
+Na presente década está se presenciando um nível de investimentos sem
 precedentes em ecosistemas de tecnologia para modelagem 3D de fenômenos
 usando-se múltiplas imagens adquiridas por uma câmera em diferentes posições,
 múltiplas câmeras, ou vídeo~\cite{AppleKeynote:2018}. % A Expand here on explicit applications and citations
@@ -205,7 +205,7 @@ na medida em que aplicativos práticos são desenvolvidos, como realidade
 aumentada~\cite{AppleKeynote:2018}. Pode-se afirmar que tais limitações se devem
 a três problemas centrais: o uso de geometria projetiva clássica de pontos, sem 
 a geometria diferencial necessária para modelar estruturas mais gerais; o uso
-sub-ótimo de múltiplas imagens; e a necessidade de models 3D mais
+sub-ótimo de múltiplas imagens; e a necessidade de modelos 3D mais
 estruturados.
 
 O grupo de pesquisa do prof.\ Ricardo Fabbri tem tradição em um novo paradigma
@@ -216,7 +216,7 @@ A pesquisa do prof.\ Fabbri tem como objetivo suplantar as limitações
 supracitadas da tecnologia usual de reconstrução 3D, a qual é baseada em (e
 limitada por) pontos de interesse. Uma das formas para se atingir esse objetivo
 é empregando-se a informação disponível em curvas perceptuais em imagens,
-através de um modelo 3D com progressivos níveis de detalhes baseado no chamado
+através de um modelo 3D com progressivos níveis de detalhe baseado no chamado
 \emph{3D curve sketch} (esboço 3D de curvas) e o \emph{3D curve drawing}
 (desenho 3D de curvas). Tendo obtido um esboço inicial dos objetos 3D através do
 casamento de curvas ao longo das múltiplas imagens, o modelo 3D pode ser
@@ -283,7 +283,7 @@ reconstrução 3D de superfícies através da assinatura geométrica gerada por 
 família de curvas em um vídeo. Tal problema já havia sido abordado por
 Fabbri~\cite{Fabbri:Kimia:IJCV2016}, porém a sofisticação matemática de Olver
 será necessária para levar essas técnicas adiante, permitindo
-incorporadar algumas técnicas de reconstrução 3D de superfícies em um sistema
+incorporar algumas técnicas de reconstrução 3D de superfícies em um sistema
 prático de fotogrametria digital.
 
 Com o acabouço de aprendizagem de máquina trabalhado entre os prof.\ Fabbri e
@@ -300,13 +300,13 @@ nos preprints de Olver.
 Esta seção resume o trabalho anterior de Fabbri~\etal sobre o paradigma do
 Desenho 3D para reconstrução de cenas (coleções de objetos) a partir de múltiplas imagens.
 O fundamento matemático está presente em~\cite{fabbri2016multiview},
-relacionando as propriedades diferencias de uma curva 3D
+relacionando as propriedades diferenciais de uma curva 3D
 $\Gamma(S)$, onde $\Gamma$ é um ponto 3D (possivelmente em uma curva) no sistema
-de coordenadas de câmera, e $S$ is é uma parametrização da curva 2D
+de coordenadas de câmera, e $S$ é uma parametrização da curva 2D
 correspondente, $\gama(s)$, onde $\gama$ é um ponto em uma imagem e $s$ é uma
 parametrização da curva 3D. Usando-se a relação
-$\Gamma(S) = \rho(s) \gama(S)$, onde $\rho$ é a profindidade do ponto
-denotado por $\Gama$, a geoemtria diferencial da curva 3D
+$\Gamma(S) = \rho(s) \gama(S)$, onde $\rho$ é a profundidade do ponto
+denotado por $\Gama$, a geometria diferencial da curva 3D
 $\{
 \boldsymbol{T},\boldsymbol{N},\boldsymbol{B}, K, \dot{K},\tau, G,G',G''\}$ é
 relacionada à geometria diferencial da curva 
@@ -315,12 +315,14 @@ $\{\boldsymbol{\gamma},
 \rho',\rho'',\rho'''\}$, onde
 $\{\boldsymbol{T},\boldsymbol{N},\boldsymbol{B}\}$ é o triedro de Frenet da
 curva 3D, \ie, a tangente, normal e binormal unitário, 
-$K$ e $\tau$ são as curvatura e torção and torsion da curva espacial, resp.,
+$K$ e $\tau$ são as curvatura e torção da curva espacial, resp.,
 $\kappa$ é a curvatura da curva numa imagem, e $G$ e $g$ são as velocidades de
 parametrização das curvas 3D e 2D, resp., e onde
-`` $'$ " e `` $\cdot$ " simbolizam a diferenciação relativa a um parâmetro
+`` $'$  e  "  $"$ simbolizam a diferenciação relativa a um parâmetro
 espacial arbitrário ($S$ ou $s$) ou parametrização por comprimento de arco,
 resp. 
+
+
 
 Note-se que $\dot{\kappa}$ e $\dot{K}$ compõe modelos intrínsecos das curvas. 
 Foi demonstrado pela primeira vez por Fabbri~\etal~\cite{fabbri2016multiview} como
@@ -340,7 +342,7 @@ Essas relações são muito impotantes para se relacionar três ou mais imagens
 de multiplas vistas ou para reconstruir-se uma cena: foi mostrado como 
 a geometria diferencial em duas vistas (tangente, curvatura, e
 derivada da curvatura) reconstroem a geometria diferencial em 3D (tangente,
-curvatura e torção em 3D), Figure~\ref{fig:WW1}
+curvatura e torção em 3D), Figure~\ref{fig:WW1}.
 
 {\em
   Neste projeto, focaremos na continuidade da pesquisa conjunta de Fabbri com
@@ -381,7 +383,7 @@ Figure~\ref{fig:lofting:pipeline} (\emph{3D curve sketch}). Neste estágio
 inicial de reconstrução, o esboço 3D de curvas sofre de erros de agrupamentos e
 fragmentações, além de redundância já que a informação ainda não foi integrada
 para diferentes pares de imagens, o que motivou Fabbri~\etal~\cite{usumezbas2016multiview}
-a explorar a conectividade topologica  para produzir um grafo conexo de
+a explorar a conectividade topológica  para produzir um grafo conexo de
 curvas longas, denominado ``desenho 3D de curvas'', ver terceira linha na
 Figura~\ref{fig:lofting:pipeline}.
 \begin{figure*}
@@ -393,7 +395,7 @@ Figura~\ref{fig:lofting:pipeline}.
   \caption{Uma ilustração de um sistema completo de visão 3D baseado em curvas e
   superfícies. Muitos desses módulos ainda estão em desenvolvimento. \emph{Este
 projeto se concentra nos últimos dois módulos em laranja: ``Reconstruction of
-Connectivity and Occluding Contours e ''Reconstruction of Curved Surfaces``.}}
+Connectivity and Occluding Contours'' e ``Reconstruction of Curved Surfaces''.}}
 %  \ReduceAfterCaptionfigspace
   \label{fig:lofting:pipeline}
 \end{figure*}
@@ -404,7 +406,7 @@ Connectivity and Occluding Contours e ''Reconstruction of Curved Surfaces``.}}
 Na Figura~\ref{fig:lofting:pipeline} ilustrando os módulos do sistema de
 reconstrução 3D que compõe a pesquisa do prof.\ Fabbri, \emph{pretende-se concentrar
 nos últimos dois módulos em laranja: ``Reconstruction of Connectivity and
-Occluding Contours e ''Reconstruction of Curved Surfaces``.}
+Occluding Contours'' e ``Reconstruction of Curved Surfaces''.}
 usando-se ferramentas de aprendizagem de máquina baseada em
 difusão em grafos e teoria de padrões, bem como invariantes diferenciais dentro
 da teoria de equaçõeds diferenciais.
@@ -431,7 +433,7 @@ grade, e projetando-se esta grade de pontos de forma que as múltiplas cores
 interpoladas sejam minimamente consistentes ao longo de outras imagens.
 Se essa hipótese de superfície local for fotoconsistente, então ela fará parte
 da reconstrução 3D. A consistência global dessas hipóteses locais pode ser
-inferida usando-se os modelos de aprendisagem de máquina baseados em difusão,
+inferida usando-se os modelos de aprendizagem de máquina baseados em difusão,
 estudos por Moura Neto e Fabbri. 
 \begin{figure}
 \centering
@@ -627,7 +629,7 @@ redundante na forma de arrays de píxels, e uma representação altamente espars
 das nuvens de pontos de interesse. Isso permite o cálculo rápido de
 reconstruções 3D (os \emph{3D curve sketch}), que, apesar de não possuirem
 superfícies explícitas, são ainda reconhecíveis, estruturadas, e de eficiente
-manipulação e armazenagem. Essa efficiência representacional é evidenciada em
+manipulação e armazenagem. Essa eficiência representacional é evidenciada em
 uma tendência recente em computação gráfica de usar renderizações baseadas em
 curvas (\emph{line-based} rendering) para aplicações de internet que exigem
 eficiência, e também por razões estéticas. A riqueza estrutural de curvas é
@@ -635,7 +637,7 @@ illustrada pelo fato de ser impossível registrar uma nova imagem não-calibrada
 com relação a uma nuvem de pontos 3D por si só, ao passo que essa tarefa se
 torna possível com curvas 3D dada a maior estruturação geométrica (\eg,
 reprojetando-se as curvas 3D na nova imagem e alinhando-as às curvas detectadas
-na imagem). Ademais, é bem sabido que representações basedas em bordas
+na imagem). Ademais, é bem sabido que representações baseadas em bordas
 representam eficiente o conteúdo de uma imagem, o que motiva uma reconstrução de
 curvas 3D eficiente para armazenar a informação geométrica mais relevante de uma
 cena 3D. Curvas também têm maior invariância do que pontos de interesse a
@@ -777,4 +779,7 @@ Peter Olver, que também pesquisa visão computacional.
 %\center $\overline{\ \ \ Ricardo\ Fabbri\ \ \ }$
 %\ \\\vspace{4cm}
 %\center $\overline{\ \ \ Luciano\ da\ Fontoura\ Costa\ \ \ }$
+  \includegraphics[width=0.5\linewidth]{figs/assinatura-cleuber.png}\\
+  \includegraphics[width=0.2\linewidth]{figs/signature-extensive.png}\\[-4em]
+  \includegraphics[width=0.2\linewidth]{figs/assinatura-francisco-moura-neto.pdf}
 \end{document}
